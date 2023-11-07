@@ -1,1 +1,1 @@
-# aws-vault-secrets
+This creates a Variable Set in Terraform Cloud which includes AWS access credentials (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY). The secret values are imported from HCP Vault Secrets. Terraform integrates with HCP Vault Secrets through a service principal.
