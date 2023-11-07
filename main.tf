@@ -10,14 +10,8 @@ resource "aws_instance" "dorina-vm" {
   }
 }
 
-data "hcp_vault_secrets_app" "test-app" {
+data "hcp_vault_secrets_app" "Learning-app" {
   app_name = "Learning-app"
-  secret_name = "AWS_ACCESS_KEY_ID"
-}
-
-data "hcp_vault_secrets_app" "test-app" {
-  app_name = "Learning-app"
-  secret_name = "AWS_SECRET_ACCESS_KEY"
 }
 
 output "public_ip" {
