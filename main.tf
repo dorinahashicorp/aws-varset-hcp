@@ -11,8 +11,14 @@ required_providers {
 }
 }
 
+data "hcp_vault_secrets_app" "Learning-app" {
+  app_name = "Learning-app"
+}
+
 provider "aws" {
-  region = "us-east-2" 
+  region = "us-east-2"
+    access_key = data.hcp_vault_secrets_app.Learning-app.AWS_ACCESS_KEY_ID
+    secret_key = data.hcp_vault_secrets_app.Learning-app.AWS_SECRET_ACCESS_KEY
 }
 
 resource "aws_instance" "dorina-vm" {
@@ -21,10 +27,6 @@ resource "aws_instance" "dorina-vm" {
   tags = {
     Name = "dorina-vm"
   }
-}
-
-data "hcp_vault_secrets_app" "Learning-app" {
-  app_name = "Learning-app"
 }
 
 output "public_ip" {
