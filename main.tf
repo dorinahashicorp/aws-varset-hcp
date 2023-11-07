@@ -26,4 +26,5 @@ variable "HCP_CLIENT_SECRET" {
 
 output "dorina-test" {
   value = data.hcp_vault_secrets_app.Learning-app
+  sensitive = false
 }
