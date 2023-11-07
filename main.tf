@@ -20,7 +20,7 @@ data "hcp_vault_secrets_secret" "secret_key" {
 resource "tfe_variable" "access_key" {
   key             = "AWS_ACCESS_KEY_ID"
   value           = data.hcp_vault_secrets_secret.access_key.secret_value
-  category        = "environment"
+  category        = "env"
   description     = "The AWS Access Key"
   variable_set_id = tfe_variable_set.test.id
 }
@@ -28,7 +28,7 @@ resource "tfe_variable" "access_key" {
 resource "tfe_variable" "secret_key" {
   key             = "AWS_ACCESS_KEY_ID"
   value           = data.hcp_vault_secrets_secret.secret_key.secret_value
-  category        = "environment"
+  category        = "env"
   description     = "The AWS Secret Key"
   variable_set_id = tfe_variable_set.test.id
 }
