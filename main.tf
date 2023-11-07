@@ -24,6 +24,14 @@ provider "hcp" {
   client_secret = var.HCP_CLIENT_SECRET
 }
 
+variable "HCP_CLIENT_ID" {
+  type = string
+}
+
+variable "HCP_CLIENT_SECRET" {
+  type = string
+}
+
 resource "aws_instance" "dorina-vm" {
   ami           = "ami-00448a337adc93c05" 
   instance_type = "t2.micro" 
