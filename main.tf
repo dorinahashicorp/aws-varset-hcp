@@ -17,8 +17,6 @@ data "hcp_vault_secrets_app" "Learning-app" {
 
 provider "aws" {
   region = "us-east-2"
-    access_key = data.hcp_vault_secrets_app.Learning-app.AWS_ACCESS_KEY_ID
-    secret_key = data.hcp_vault_secrets_app.Learning-app.AWS_SECRET_ACCESS_KEY
 }
 
 resource "aws_instance" "dorina-vm" {
