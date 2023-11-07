@@ -4,7 +4,11 @@ required_providers {
       source = "hashicorp/hcp"
       version = "0.63.0"
     }
-  }
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.24.0"
+    }
+}
 }
 
 provider "aws" {
