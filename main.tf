@@ -20,7 +20,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "dorina-vm" {
-  ami           = "ami-0c55b159cbfafe1f0" 
+  ami           = "ami-00448a337adc93c05" 
   instance_type = "t2.micro" 
   tags = {
     Name = "dorina-vm"
