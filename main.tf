@@ -22,14 +22,16 @@ resource "tfe_variable" "access_key" {
   value           = data.hcp_vault_secrets_secret.access_key.secret_value
   category        = "env"
   description     = "The AWS Access Key"
+  sensitive       = true
   variable_set_id = tfe_variable_set.test.id
 }
 
 resource "tfe_variable" "secret_key" {
-  key             = "AWS_ACCESS_KEY_ID"
+  key             = "AWS_SECRET_ACCESS_KEY"
   value           = data.hcp_vault_secrets_secret.secret_key.secret_value
   category        = "env"
   description     = "The AWS Secret Key"
+  sensitive       = true
   variable_set_id = tfe_variable_set.test.id
 }
 
